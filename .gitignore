@@ -1,1 +1,17 @@
+# Entorno virtual
 masterful-python/
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+
+# Archivos de entorno
+.env
+*.env
+
+# Bases de datos y logs
+*.sqlite3
+*.log
+
+# Archivos del sistema
+.DS_Store
