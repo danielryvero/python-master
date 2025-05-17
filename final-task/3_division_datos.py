@@ -18,4 +18,5 @@ print("y_train shape:", y_train.shape)
 print("y_test shape:", y_test.shape)
 
 
-# shapes son de (35,4) y (15,4) para entrenamiento y test respectivamente, como era de esperar
+print ("""Las shapes son de (35,4) y (15,4) para entrenamiento y test respectivamente, 
+como era de esperar debido a la division de conjuntos de prueba y entrenamiento que realizamos""")

@@ -7,17 +7,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 
-# Cargar los datos
+# cargamos los datos
 df = pd.read_csv("datos_prestamos.csv")
 
-# Preprocesamiento (si es necesario)
-# Aseguramos que las columnas numéricas sean correctamente tratadas
+# aseguramos que las columnas numericas sean correctamente tratadas
 df['Edad'] = df['Edad'].astype(float)
 df['Ingresos'] = df['Ingresos'].astype(float)
 df['Puntuacion_Credito'] = df['Puntuacion_Credito'].astype(float)
 df['Prestamos_Previos'] = df['Prestamos_Previos'].astype(float)
 
-# Dividir los datos
+# dividimos los datos
 X = df[['Edad', 'Ingresos', 'Puntuacion_Credito', 'Prestamos_Previos']]
 y = df['Aprobado']
 
@@ -32,10 +31,10 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.3, 
 model = LogisticRegression()
 model.fit(X_train, y_train)
 
-# Evaluar el modelo
+# vvaluar el modelo
 y_pred = model.predict(X_test)
 
-# 1. Matriz de confusión
+# 1. matriz de confusión
 cm = confusion_matrix(y_test, y_pred)
 print("Matriz de Confusión:")
 print(cm)
@@ -45,8 +44,8 @@ print("\nReporte de clasificación:")
 print(classification_report(y_test, y_pred))
 
 # 3. Curva ROC y AUC. 
-# La curva ROC ayuda a evaluar la capacidad del modelo de para discriminar entre las clases
-# El área bajo la curva o AUC se utiliza como métrica para indicar la calidad de las predicciones
+# la curva ROC ayuda a evaluar la capacidad del modelo de para discriminar entre las clases
+# el area bajo la curva o AUC se utiliza como métrica para indicar la calidad de las predicciones
 fpr, tpr, thresholds = roc_curve(y_test, model.predict_proba(X_test)[:,1])
 roc_auc = auc(fpr, tpr)
 
@@ -61,7 +60,7 @@ plt.title('Curva ROC')
 plt.legend(loc='lower right')
 plt.show()
 
-# Reflexión sobre los falsos positivos y negativos
+# reflexion sobre los falsos positivos y negativos
 print("\nReflexión sobre los Falsos Positivos y Negativos:")
 print("""
 Los falsos positivos como cuando un cliente no aprobado es clasificado como aprobado, podrían llevar a
