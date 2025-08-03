@@ -10,7 +10,6 @@ This project was developed as part of the final assignment for my Big Data and B
 - Comparison of logistic regression, random forests, and XGBoost
 - Justification of model choice based on business needs and statistical evidence
 
-🔗 **Repository:** [View on GitHub](https://github.com/tu-usuario/tu-repo)  
 📁 **Technologies:** Python, Pandas, scikit-learn, Matplotlib, Seaborn
 
 This Project is in Spanish Language!
